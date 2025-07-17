@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Trending 仓库搜索</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#24292e',
+                        secondary: '#0366d6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+            }
+            .language-dot {
+                @apply inline-block w-2 h-2 rounded-full mr-1;
+            }
+            .search-highlight {
+                @apply bg-yellow-200 font-medium;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <header class="bg-primary text-white shadow-md">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fa fa-github text-4xl mr-4"></i>
+                    <h1 class="text-2xl md:text-3xl font-bold">GitHub Trending 仓库搜索</h1>
+                </div>
+                <div class="text-sm opacity-80">
+                    搜索 GitHub 每日热门仓库，支持全文搜索
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- 搜索表单 -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-xl font-bold mb-4 text-gray-800">搜索条件</h2>
+            <form method="GET" class="space-y-4">
+                <div>
+                    <label for="search" class="block text-sm font-medium text-gray-700 mb-1">关键词搜索</label>
+                    <div class="relative">
+                        <input type="text" id="search" name="search" 
+                               placeholder="搜索仓库名称、作者或描述..." 
+                               value="{{ search_query }}"
+                               class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fa fa-search text-gray-400"></i>
+                        </div>
+                    </div>
+                    <p class="mt-1 text-sm text-gray-500">支持模糊搜索，例如："ai" 会匹配包含"artificial intelligence"的仓库</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="language" class="block text-sm font-medium text-gray-700 mb-1">编程语言</label>
+                        <select id="language" name="language" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary">
+                            <option value="">所有语言</option>
+                            {% for lang in languages %}
+                            <option value="{{ lang }}" {% if lang == selected_language %}selected{% endif %}>{{ lang }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="date" class="block text-sm font-medium text-gray-700 mb-1">日期</label>
+                        <select id="date" name="date" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary">
+                            <option value="">所有日期</option>
+                            {% for d in dates %}
+                            <option value="{{ d }}" {% if d == selected_date %}selected{% endif %}>{{ d }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end">
+                    <button type="submit" class="bg-secondary hover:bg-secondary/90 text-white font-medium py-2 px-6 rounded-md transition duration-300 shadow-sm flex items-center">
+                        <i class="fa fa-search mr-2"></i> 搜索
+                    </button>
+                    <a href="/" class="ml-3 inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition duration-300">
+                        重置
+                    </a>
+                </div>
+            </form>
+        </div>
+
+        <!-- 结果统计 -->
+        {% if search_query or selected_language or selected_date %}
+        <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-xl font-bold text-gray-800">搜索结果</h2>
+                    <p class="text-gray-600">找到 {{ total_count }} 个匹配的仓库</p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    {% if selected_language %}
+                    <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
+                        <i class="fa fa-code mr-1"></i> {{ selected_language }}
+                    </div>
+                    {% endif %}
+                    {% if selected_date %}
+                    <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                        <i class="fa fa-calendar mr-1"></i> {{ selected_date }}
+                    </div>
+                    {% else %}
+                    <div class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">
+                        <i class="fa fa-calendar mr-1"></i> 所有日期
+                    </div>
+                    {% endif %}
+                    {% if search_query %}
+                    <div class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">
+                        <i class="fa fa-search mr-1"></i> "{{ search_query }}"
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-xl font-bold text-gray-800">全部 GitHub Trending 仓库</h2>
+                    <p class="text-gray-600">共有 {{ total_count }} 个仓库，按日期和排名排序</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- 结果列表 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for repo in repositories %}
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold text-gray-900">
+                            <a href="{{ repo.url }}" target="_blank" class="text-secondary hover:underline">
+                                {{ repo.full_name }}
+                            </a>
+                        </h3>
+                        <div class="flex gap-2">
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                #{{ repo.idx }}
+                            </span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                {{ repo.date }}
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-4 line-clamp-3">
+                        {% if search_query %}
+                            {{ repo.description|safe }}
+                        {% else %}
+                            {{ repo.description }}
+                        {% endif %}
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        {% if repo.language %}
+                        <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full flex items-center">
+                            <span class="language-dot" style="background-color: {% if repo.language == 'JavaScript' %}#f1e05a{% elif repo.language == 'Python' %}#3572A5{% elif repo.language == 'Java' %}#b07219{% elif repo.language == 'TypeScript' %}#2b7489{% elif repo.language == 'C++' %}#f34b7d{% elif repo.language == 'C#' %}#178600{% else %}#e34c26{% endif %}"></span>
+                            {{ repo.language }}
+                        </span>
+                        {% endif %}
+                        <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full flex items-center">
+                            <i class="fa fa-star text-yellow-500 mr-1"></i> {{ repo.stars|commaint }}
+                        </span>
+                        <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full flex items-center">
+                            <i class="fa fa-code-fork mr-1"></i> {{ repo.fork|commaint }}
+                        </span>
+                    </div>
+                    
+                    <a href="{{ repo.url }}" target="_blank" class="inline-flex items-center px-4 py-2 border border-secondary text-secondary rounded-md shadow-sm text-sm font-medium hover:bg-secondary hover:text-white transition duration-300">
+                        <i class="fa fa-external-link mr-2"></i> 查看仓库
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- 分页控件 -->
+        {% if total_pages > 1 %}
+        <div class="mt-8 bg-white rounded-lg shadow-md p-4 flex justify-center">
+            <nav class="flex items-center space-x-1">
+                <!-- 上一页 -->
+                {% if page > 1 %}
+                <a href="?{% if search_query %}search={{ search_query }}&{% endif %}{% if selected_language %}language={{ selected_language }}&{% endif %}{% if selected_date %}date={{ selected_date }}&{% endif %}page={{ page - 1 }}" 
+                   class="px-3 py-2 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+                {% else %}
+                <span class="px-3 py-2 rounded-md border border-gray-300 text-gray-400 bg-gray-50 cursor-not-allowed">
+                    <i class="fa fa-chevron-left"></i>
+                </span>
+                {% endif %}
+                
+                <!-- 页码 -->
+                {% for p in range(1, total_pages + 1) %}
+                    {% if p == page %}
+                    <span class="px-3 py-2 rounded-md border border-secondary bg-secondary text-white">
+                        {{ p }}
+                    </span>
+                    {% else %}
+                    <a href="?{% if search_query %}search={{ search_query }}&{% endif %}{% if selected_language %}language={{ selected_language }}&{% endif %}{% if selected_date %}date={{ selected_date }}&{% endif %}page={{ p }}" 
+                       class="px-3 py-2 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50">
+                        {{ p }}
+                    </a>
+                    {% endif %}
+                {% endfor %}
+                
+                <!-- 下一页 -->
+                {% if page < total_pages %}
+                <a href="?{% if search_query %}search={{ search_query }}&{% endif %}{% if selected_language %}language={{ selected_language }}&{% endif %}{% if selected_date %}date={{ selected_date }}&{% endif %}page={{ page + 1 }}" 
+                   class="px-3 py-2 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50">
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+                {% else %}
+                <span class="px-3 py-2 rounded-md border border-gray-300 text-gray-400 bg-gray-50 cursor-not-allowed">
+                    <i class="fa fa-chevron-right"></i>
+                </span>
+                {% endif %}
+            </nav>
+        </div>
+        {% endif %}
+
+        <!-- 空状态 -->
+        {% if (search_query or selected_language or selected_date) and repositories|length == 0 %}
+        <div class="bg-white rounded-lg shadow-md p-8 text-center">
+            <div class="mb-4 text-5xl text-gray-300">
+                <i class="fa fa-search"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">没有找到匹配的仓库</h3>
+            <p class="text-gray-600 mb-6">尝试调整搜索关键词或选择其他筛选条件</p>
+            <a href="/" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition duration-300">
+                重置搜索
+            </a>
+        </div>
+        {% endif %}
+    </main>
+
+    <footer class="bg-primary text-white mt-12">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-sm opacity-80">GitHub Trending 仓库自动收集工具</p>
+                    <p class="text-xs opacity-60">数据每日自动更新，仅供参考</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white hover:text-gray-300 transition duration-300">
+                        <i class="fa fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-gray-300 transition duration-300">
+                        <i class="fa fa-question-circle text-xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-gray-300 transition duration-300">
+                        <i class="fa fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 高亮搜索关键词
+        document.addEventListener('DOMContentLoaded', function() {
+            if ('{{ search_query }}') {
+                const searchTerm = '{{ search_query }}';
+                const regex = new RegExp(`(${searchTerm})`, 'gi');
+                
+                document.querySelectorAll('.line-clamp-3').forEach(function(element) {
+                    if (element.textContent.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        element.innerHTML = element.textContent.replace(regex, '<span class="search-highlight">$1</span>');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>    
