@@ -1419,3 +1419,278 @@
 2025-07-17 10:56:05,886 - INFO - 总共成功保存 345 个仓库到数据库
 2025-07-17 10:56:05,886 - INFO - 已清除状态文件
 2025-07-17 10:56:05,886 - INFO - ===== GitHub Trending 爬虫执行完成 =====
+2025-07-21 10:38:45,669 - INFO - ===== 开始执行 GitHub Trending 爬虫 =====
+2025-07-21 10:38:45,711 - INFO - 开始爬取 所有语言 的 Trending 仓库
+2025-07-21 10:38:45,712 - INFO - 请求页面: https://github.com/trending (尝试 1/10)
+2025-07-21 10:38:55,020 - INFO - 开始解析 所有语言 的 Trending 页面
+2025-07-21 10:38:55,337 - INFO - 成功获取 15 个 Kotlin 的 Trending 仓库
+2025-07-21 10:38:55,382 - INFO - 成功保存 15 个 所有语言 的仓库
+2025-07-21 10:38:55,382 - INFO - 等待 5.76 秒后继续下一种语言
+2025-07-21 10:39:01,141 - INFO - 开始爬取 python 的 Trending 仓库
+2025-07-21 10:39:01,142 - INFO - 请求页面: https://github.com/trending/python (尝试 1/10)
+2025-07-21 10:39:06,167 - INFO - 开始解析 python 的 Trending 页面
+2025-07-21 10:39:06,491 - INFO - 成功获取 14 个 Python 的 Trending 仓库
+2025-07-21 10:39:06,496 - INFO - 成功保存 14 个 python 的仓库
+2025-07-21 10:39:06,496 - INFO - 等待 4.34 秒后继续下一种语言
+2025-07-21 10:39:10,841 - INFO - 开始爬取 javascript 的 Trending 仓库
+2025-07-21 10:39:10,841 - INFO - 请求页面: https://github.com/trending/javascript (尝试 1/10)
+2025-07-21 10:39:13,072 - INFO - 开始解析 javascript 的 Trending 页面
+2025-07-21 10:39:13,377 - INFO - 成功获取 13 个 JavaScript 的 Trending 仓库
+2025-07-21 10:39:13,383 - INFO - 成功保存 13 个 javascript 的仓库
+2025-07-21 10:39:13,384 - INFO - 等待 6.25 秒后继续下一种语言
+2025-07-21 10:39:19,643 - INFO - 开始爬取 java 的 Trending 仓库
+2025-07-21 10:39:19,643 - INFO - 请求页面: https://github.com/trending/java (尝试 1/10)
+2025-07-21 10:39:21,815 - INFO - 开始解析 java 的 Trending 页面
+2025-07-21 10:39:22,252 - INFO - 成功获取 22 个 Java 的 Trending 仓库
+2025-07-21 10:39:22,261 - INFO - 成功保存 22 个 java 的仓库
+2025-07-21 10:39:22,262 - INFO - 等待 3.75 秒后继续下一种语言
+2025-07-21 10:39:26,018 - INFO - 开始爬取 typescript 的 Trending 仓库
+2025-07-21 10:39:26,018 - INFO - 请求页面: https://github.com/trending/typescript (尝试 1/10)
+2025-07-21 10:39:28,056 - INFO - 开始解析 typescript 的 Trending 页面
+2025-07-21 10:39:28,350 - INFO - 成功获取 17 个 TypeScript 的 Trending 仓库
+2025-07-21 10:39:28,358 - INFO - 成功保存 17 个 typescript 的仓库
+2025-07-21 10:39:28,359 - INFO - 等待 4.36 秒后继续下一种语言
+2025-07-21 10:39:32,719 - INFO - 开始爬取 c++ 的 Trending 仓库
+2025-07-21 10:39:32,719 - INFO - 请求页面: https://github.com/trending/c++ (尝试 1/10)
+2025-07-21 10:39:35,170 - INFO - 开始解析 c++ 的 Trending 页面
+2025-07-21 10:39:35,520 - INFO - 成功获取 18 个 C++ 的 Trending 仓库
+2025-07-21 10:39:35,526 - INFO - 成功保存 18 个 c++ 的仓库
+2025-07-21 10:39:35,526 - INFO - 等待 4.26 秒后继续下一种语言
+2025-07-21 10:39:39,792 - INFO - 开始爬取 c# 的 Trending 仓库
+2025-07-21 10:39:39,792 - INFO - 请求页面: https://github.com/trending/c# (尝试 1/10)
+2025-07-21 10:39:42,367 - INFO - 开始解析 c# 的 Trending 页面
+2025-07-21 10:39:42,674 - INFO - 成功获取 22 个 C 的 Trending 仓库
+2025-07-21 10:39:42,680 - INFO - 成功保存 22 个 c# 的仓库
+2025-07-21 10:39:42,680 - INFO - 等待 6.23 秒后继续下一种语言
+2025-07-21 10:39:48,909 - INFO - 开始爬取 go 的 Trending 仓库
+2025-07-21 10:39:48,909 - INFO - 请求页面: https://github.com/trending/go (尝试 1/10)
+2025-07-21 10:39:51,964 - INFO - 开始解析 go 的 Trending 页面
+2025-07-21 10:39:52,223 - INFO - 成功获取 22 个 Go 的 Trending 仓库
+2025-07-21 10:39:52,227 - INFO - 成功保存 22 个 go 的仓库
+2025-07-21 10:39:52,227 - INFO - 等待 6.84 秒后继续下一种语言
+2025-07-21 10:39:59,067 - INFO - 开始爬取 rust 的 Trending 仓库
+2025-07-21 10:39:59,067 - INFO - 请求页面: https://github.com/trending/rust (尝试 1/10)
+2025-07-21 10:40:02,802 - INFO - 开始解析 rust 的 Trending 页面
+2025-07-21 10:40:03,156 - INFO - 成功获取 21 个 Rust 的 Trending 仓库
+2025-07-21 10:40:03,169 - INFO - 成功保存 21 个 rust 的仓库
+2025-07-21 10:40:03,169 - INFO - 等待 5.12 秒后继续下一种语言
+2025-07-21 10:40:08,291 - INFO - 开始爬取 php 的 Trending 仓库
+2025-07-21 10:40:08,292 - INFO - 请求页面: https://github.com/trending/php (尝试 1/10)
+2025-07-21 10:40:14,000 - INFO - 开始解析 php 的 Trending 页面
+2025-07-21 10:40:14,318 - INFO - 成功获取 20 个 PHP 的 Trending 仓库
+2025-07-21 10:40:14,330 - INFO - 成功保存 20 个 php 的仓库
+2025-07-21 10:40:14,331 - INFO - 等待 6.76 秒后继续下一种语言
+2025-07-21 10:40:21,091 - INFO - 开始爬取 ruby 的 Trending 仓库
+2025-07-21 10:40:21,091 - INFO - 请求页面: https://github.com/trending/ruby (尝试 1/10)
+2025-07-21 10:40:31,096 - WARNING - 请求超时: https://github.com/trending/ruby
+2025-07-21 10:40:31,097 - INFO - 等待 1.77 秒后重试
+2025-07-21 10:40:32,872 - INFO - 请求页面: https://github.com/trending/ruby (尝试 2/10)
+2025-07-21 10:40:42,878 - WARNING - 请求超时: https://github.com/trending/ruby
+2025-07-21 10:40:42,878 - INFO - 等待 2.27 秒后重试
+2025-07-21 10:40:45,154 - INFO - 请求页面: https://github.com/trending/ruby (尝试 3/10)
+2025-07-21 10:40:55,844 - INFO - 开始解析 ruby 的 Trending 页面
+2025-07-21 10:40:56,110 - INFO - 成功获取 19 个 Ruby 的 Trending 仓库
+2025-07-21 10:40:56,125 - INFO - 成功保存 19 个 ruby 的仓库
+2025-07-21 10:40:56,125 - INFO - 等待 6.47 秒后继续下一种语言
+2025-07-21 10:41:02,596 - INFO - 开始爬取 swift 的 Trending 仓库
+2025-07-21 10:41:02,596 - INFO - 请求页面: https://github.com/trending/swift (尝试 1/10)
+2025-07-21 10:41:05,118 - INFO - 开始解析 swift 的 Trending 页面
+2025-07-21 10:41:05,433 - INFO - 成功获取 23 个 Swift 的 Trending 仓库
+2025-07-21 10:41:05,445 - INFO - 成功保存 23 个 swift 的仓库
+2025-07-21 10:41:05,445 - INFO - 等待 4.00 秒后继续下一种语言
+2025-07-21 10:41:09,449 - INFO - 开始爬取 kotlin 的 Trending 仓库
+2025-07-21 10:41:09,449 - INFO - 请求页面: https://github.com/trending/kotlin (尝试 1/10)
+2025-07-21 10:41:14,118 - INFO - 开始解析 kotlin 的 Trending 页面
+2025-07-21 10:41:14,659 - INFO - 成功获取 21 个 Kotlin 的 Trending 仓库
+2025-07-21 10:41:14,666 - INFO - 成功保存 21 个 kotlin 的仓库
+2025-07-21 10:41:14,667 - INFO - 等待 4.05 秒后继续下一种语言
+2025-07-21 10:41:18,723 - INFO - 开始爬取 dart 的 Trending 仓库
+2025-07-21 10:41:18,723 - INFO - 请求页面: https://github.com/trending/dart (尝试 1/10)
+2025-07-21 10:41:28,211 - INFO - 开始解析 dart 的 Trending 页面
+2025-07-21 10:41:28,442 - INFO - 成功获取 20 个 Dart 的 Trending 仓库
+2025-07-21 10:41:28,453 - INFO - 成功保存 20 个 dart 的仓库
+2025-07-21 10:41:28,453 - INFO - 等待 6.96 秒后继续下一种语言
+2025-07-21 10:41:35,415 - INFO - 开始爬取 html 的 Trending 仓库
+2025-07-21 10:41:35,415 - INFO - 请求页面: https://github.com/trending/html (尝试 1/10)
+2025-07-21 10:41:49,258 - INFO - 开始解析 html 的 Trending 页面
+2025-07-21 10:41:49,478 - INFO - 成功获取 16 个 HTML 的 Trending 仓库
+2025-07-21 10:41:49,485 - INFO - 成功保存 16 个 html 的仓库
+2025-07-21 10:41:49,485 - INFO - 等待 4.85 秒后继续下一种语言
+2025-07-21 10:41:54,339 - INFO - 开始爬取 css 的 Trending 仓库
+2025-07-21 10:41:54,339 - INFO - 请求页面: https://github.com/trending/css (尝试 1/10)
+2025-07-21 10:42:01,616 - INFO - 开始解析 css 的 Trending 页面
+2025-07-21 10:42:01,894 - INFO - 成功获取 15 个 CSS 的 Trending 仓库
+2025-07-21 10:42:01,907 - INFO - 成功保存 15 个 css 的仓库
+2025-07-21 10:42:01,907 - INFO - 等待 3.79 秒后继续下一种语言
+2025-07-21 10:42:05,697 - INFO - 开始爬取 shell 的 Trending 仓库
+2025-07-21 10:42:05,697 - INFO - 请求页面: https://github.com/trending/shell (尝试 1/10)
+2025-07-21 10:42:14,229 - INFO - 开始解析 shell 的 Trending 页面
+2025-07-21 10:42:14,496 - INFO - 成功获取 15 个 Shell 的 Trending 仓库
+2025-07-21 10:42:14,503 - INFO - 成功保存 15 个 shell 的仓库
+2025-07-21 10:42:14,503 - INFO - 等待 3.06 秒后继续下一种语言
+2025-07-21 10:42:17,572 - INFO - 开始爬取 objective-cscala 的 Trending 仓库
+2025-07-21 10:42:17,572 - INFO - 请求页面: https://github.com/trending/objective-cscala (尝试 1/10)
+2025-07-21 10:42:23,309 - INFO - 开始解析 objective-cscala 的 Trending 页面
+2025-07-21 10:42:23,503 - INFO - 未找到 objective-cscala 的 Trending 仓库
+2025-07-21 10:42:23,504 - WARNING - 未找到 objective-cscala 的 Trending 仓库
+2025-07-21 10:42:23,504 - INFO - 等待 3.13 秒后继续下一种语言
+2025-07-21 10:42:26,639 - INFO - 开始爬取 groovy 的 Trending 仓库
+2025-07-21 10:42:26,640 - INFO - 请求页面: https://github.com/trending/groovy (尝试 1/10)
+2025-07-21 10:42:32,658 - INFO - 开始解析 groovy 的 Trending 页面
+2025-07-21 10:42:32,853 - INFO - 成功获取 5 个 Groovy 的 Trending 仓库
+2025-07-21 10:42:32,858 - INFO - 成功保存 5 个 groovy 的仓库
+2025-07-21 10:42:32,858 - INFO - 等待 6.74 秒后继续下一种语言
+2025-07-21 10:42:39,603 - INFO - 开始爬取 haskell 的 Trending 仓库
+2025-07-21 10:42:39,603 - INFO - 请求页面: https://github.com/trending/haskell (尝试 1/10)
+2025-07-21 10:42:50,240 - INFO - 开始解析 haskell 的 Trending 页面
+2025-07-21 10:42:50,524 - INFO - 成功获取 9 个 Haskell 的 Trending 仓库
+2025-07-21 10:42:50,529 - INFO - 成功保存 9 个 haskell 的仓库
+2025-07-21 10:42:50,530 - INFO - 等待 4.71 秒后继续下一种语言
+2025-07-21 10:42:55,244 - INFO - 开始爬取 perl 的 Trending 仓库
+2025-07-21 10:42:55,244 - INFO - 请求页面: https://github.com/trending/perl (尝试 1/10)
+2025-07-21 10:42:57,784 - INFO - 开始解析 perl 的 Trending 页面
+2025-07-21 10:42:58,044 - INFO - 成功获取 10 个 Perl 的 Trending 仓库
+2025-07-21 10:42:58,050 - INFO - 成功保存 10 个 perl 的仓库
+2025-07-21 10:42:58,051 - INFO - 等待 6.17 秒后继续下一种语言
+2025-07-21 10:43:04,228 - INFO - 总共成功保存 337 个仓库到数据库
+2025-07-21 10:43:04,230 - INFO - 已清除状态文件
+2025-07-21 10:43:04,230 - INFO - ===== GitHub Trending 爬虫执行完成 =====
+2025-07-22 10:49:31,028 - INFO - ===== 开始执行 GitHub Trending 爬虫 =====
+2025-07-22 10:49:31,053 - INFO - 开始爬取 所有语言 的 Trending 仓库
+2025-07-22 10:49:31,053 - INFO - 请求页面: https://github.com/trending (尝试 1/10)
+2025-07-22 10:49:33,704 - INFO - 开始解析 所有语言 的 Trending 页面
+2025-07-22 10:49:34,229 - INFO - 成功获取 19 个 Python 的 Trending 仓库
+2025-07-22 10:49:34,286 - INFO - 成功保存 19 个 所有语言 的仓库
+2025-07-22 10:49:34,287 - INFO - 等待 6.84 秒后继续下一种语言
+2025-07-22 10:49:41,128 - INFO - 开始爬取 python 的 Trending 仓库
+2025-07-22 10:49:41,128 - INFO - 请求页面: https://github.com/trending/python (尝试 1/10)
+2025-07-22 10:49:43,166 - INFO - 开始解析 python 的 Trending 页面
+2025-07-22 10:49:43,455 - INFO - 成功获取 18 个 Python 的 Trending 仓库
+2025-07-22 10:49:43,463 - INFO - 成功保存 18 个 python 的仓库
+2025-07-22 10:49:43,463 - INFO - 等待 3.89 秒后继续下一种语言
+2025-07-22 10:49:47,352 - INFO - 开始爬取 javascript 的 Trending 仓库
+2025-07-22 10:49:47,353 - INFO - 请求页面: https://github.com/trending/javascript (尝试 1/10)
+2025-07-22 10:49:49,213 - INFO - 开始解析 javascript 的 Trending 页面
+2025-07-22 10:49:49,464 - INFO - 成功获取 13 个 JavaScript 的 Trending 仓库
+2025-07-22 10:49:49,469 - INFO - 成功保存 13 个 javascript 的仓库
+2025-07-22 10:49:49,470 - INFO - 等待 4.88 秒后继续下一种语言
+2025-07-22 10:49:54,354 - INFO - 开始爬取 java 的 Trending 仓库
+2025-07-22 10:49:54,355 - INFO - 请求页面: https://github.com/trending/java (尝试 1/10)
+2025-07-22 10:49:56,351 - INFO - 开始解析 java 的 Trending 页面
+2025-07-22 10:49:56,603 - INFO - 成功获取 19 个 Java 的 Trending 仓库
+2025-07-22 10:49:56,611 - INFO - 成功保存 19 个 java 的仓库
+2025-07-22 10:49:56,612 - INFO - 等待 6.78 秒后继续下一种语言
+2025-07-22 10:50:03,394 - INFO - 开始爬取 typescript 的 Trending 仓库
+2025-07-22 10:50:03,395 - INFO - 请求页面: https://github.com/trending/typescript (尝试 1/10)
+2025-07-22 10:50:06,573 - INFO - 开始解析 typescript 的 Trending 页面
+2025-07-22 10:50:06,805 - INFO - 成功获取 18 个 TypeScript 的 Trending 仓库
+2025-07-22 10:50:06,813 - INFO - 成功保存 18 个 typescript 的仓库
+2025-07-22 10:50:06,814 - INFO - 等待 6.79 秒后继续下一种语言
+2025-07-22 10:50:13,615 - INFO - 开始爬取 c++ 的 Trending 仓库
+2025-07-22 10:50:13,618 - INFO - 请求页面: https://github.com/trending/c++ (尝试 1/10)
+2025-07-22 10:50:15,493 - INFO - 开始解析 c++ 的 Trending 页面
+2025-07-22 10:50:15,836 - INFO - 成功获取 18 个 C++ 的 Trending 仓库
+2025-07-22 10:50:15,849 - INFO - 成功保存 18 个 c++ 的仓库
+2025-07-22 10:50:15,849 - INFO - 等待 4.14 秒后继续下一种语言
+2025-07-22 10:50:19,987 - INFO - 开始爬取 c# 的 Trending 仓库
+2025-07-22 10:50:19,987 - INFO - 请求页面: https://github.com/trending/c# (尝试 1/10)
+2025-07-22 10:50:22,143 - INFO - 开始解析 c# 的 Trending 页面
+2025-07-22 10:50:22,431 - INFO - 成功获取 25 个 C 的 Trending 仓库
+2025-07-22 10:50:22,439 - INFO - 成功保存 25 个 c# 的仓库
+2025-07-22 10:50:22,439 - INFO - 等待 5.81 秒后继续下一种语言
+2025-07-22 10:50:28,255 - INFO - 开始爬取 go 的 Trending 仓库
+2025-07-22 10:50:28,256 - INFO - 请求页面: https://github.com/trending/go (尝试 1/10)
+2025-07-22 10:50:34,838 - INFO - 开始解析 go 的 Trending 页面
+2025-07-22 10:50:35,065 - INFO - 成功获取 20 个 Go 的 Trending 仓库
+2025-07-22 10:50:35,075 - INFO - 成功保存 20 个 go 的仓库
+2025-07-22 10:50:35,075 - INFO - 等待 3.35 秒后继续下一种语言
+2025-07-22 10:50:38,423 - INFO - 开始爬取 rust 的 Trending 仓库
+2025-07-22 10:50:38,424 - INFO - 请求页面: https://github.com/trending/rust (尝试 1/10)
+2025-07-22 10:50:45,322 - INFO - 开始解析 rust 的 Trending 页面
+2025-07-22 10:50:45,631 - INFO - 成功获取 21 个 Rust 的 Trending 仓库
+2025-07-22 10:50:45,643 - INFO - 成功保存 21 个 rust 的仓库
+2025-07-22 10:50:45,643 - INFO - 等待 3.09 秒后继续下一种语言
+2025-07-22 10:50:48,733 - INFO - 开始爬取 php 的 Trending 仓库
+2025-07-22 10:50:48,733 - INFO - 请求页面: https://github.com/trending/php (尝试 1/10)
+2025-07-22 10:51:04,133 - WARNING - 请求超时: https://github.com/trending/php
+2025-07-22 10:51:04,133 - INFO - 等待 1.83 秒后重试
+2025-07-22 10:51:05,964 - INFO - 请求页面: https://github.com/trending/php (尝试 2/10)
+2025-07-22 10:51:08,349 - INFO - 开始解析 php 的 Trending 页面
+2025-07-22 10:51:08,627 - INFO - 成功获取 23 个 PHP 的 Trending 仓库
+2025-07-22 10:51:08,640 - INFO - 成功保存 23 个 php 的仓库
+2025-07-22 10:51:08,640 - INFO - 等待 4.99 秒后继续下一种语言
+2025-07-22 10:51:13,630 - INFO - 开始爬取 ruby 的 Trending 仓库
+2025-07-22 10:51:13,631 - INFO - 请求页面: https://github.com/trending/ruby (尝试 1/10)
+2025-07-22 10:51:15,698 - INFO - 开始解析 ruby 的 Trending 页面
+2025-07-22 10:51:15,916 - INFO - 成功获取 22 个 Ruby 的 Trending 仓库
+2025-07-22 10:51:15,929 - INFO - 成功保存 22 个 ruby 的仓库
+2025-07-22 10:51:15,931 - INFO - 等待 4.34 秒后继续下一种语言
+2025-07-22 10:51:20,275 - INFO - 开始爬取 swift 的 Trending 仓库
+2025-07-22 10:51:20,276 - INFO - 请求页面: https://github.com/trending/swift (尝试 1/10)
+2025-07-22 10:51:22,053 - INFO - 开始解析 swift 的 Trending 页面
+2025-07-22 10:51:22,302 - INFO - 成功获取 17 个 Swift 的 Trending 仓库
+2025-07-22 10:51:22,309 - INFO - 成功保存 17 个 swift 的仓库
+2025-07-22 10:51:22,310 - INFO - 等待 5.13 秒后继续下一种语言
+2025-07-22 10:51:27,445 - INFO - 开始爬取 kotlin 的 Trending 仓库
+2025-07-22 10:51:27,445 - INFO - 请求页面: https://github.com/trending/kotlin (尝试 1/10)
+2025-07-22 10:51:29,242 - INFO - 开始解析 kotlin 的 Trending 页面
+2025-07-22 10:51:29,536 - INFO - 成功获取 20 个 Kotlin 的 Trending 仓库
+2025-07-22 10:51:29,546 - INFO - 成功保存 20 个 kotlin 的仓库
+2025-07-22 10:51:29,547 - INFO - 等待 3.96 秒后继续下一种语言
+2025-07-22 10:51:33,513 - INFO - 开始爬取 dart 的 Trending 仓库
+2025-07-22 10:51:33,515 - INFO - 请求页面: https://github.com/trending/dart (尝试 1/10)
+2025-07-22 10:51:35,794 - INFO - 开始解析 dart 的 Trending 页面
+2025-07-22 10:51:36,060 - INFO - 成功获取 21 个 Dart 的 Trending 仓库
+2025-07-22 10:51:36,072 - INFO - 成功保存 21 个 dart 的仓库
+2025-07-22 10:51:36,072 - INFO - 等待 5.41 秒后继续下一种语言
+2025-07-22 10:51:41,485 - INFO - 开始爬取 html 的 Trending 仓库
+2025-07-22 10:51:41,485 - INFO - 请求页面: https://github.com/trending/html (尝试 1/10)
+2025-07-22 10:51:43,605 - INFO - 开始解析 html 的 Trending 页面
+2025-07-22 10:51:43,826 - INFO - 成功获取 15 个 HTML 的 Trending 仓库
+2025-07-22 10:51:43,833 - INFO - 成功保存 15 个 html 的仓库
+2025-07-22 10:51:43,834 - INFO - 等待 6.76 秒后继续下一种语言
+2025-07-22 10:51:50,587 - INFO - 开始爬取 css 的 Trending 仓库
+2025-07-22 10:51:50,588 - INFO - 请求页面: https://github.com/trending/css (尝试 1/10)
+2025-07-22 10:51:52,305 - INFO - 开始解析 css 的 Trending 页面
+2025-07-22 10:51:52,565 - INFO - 成功获取 9 个 CSS 的 Trending 仓库
+2025-07-22 10:51:52,571 - INFO - 成功保存 9 个 css 的仓库
+2025-07-22 10:51:52,571 - INFO - 等待 4.65 秒后继续下一种语言
+2025-07-22 10:51:57,226 - INFO - 开始爬取 shell 的 Trending 仓库
+2025-07-22 10:51:57,227 - INFO - 请求页面: https://github.com/trending/shell (尝试 1/10)
+2025-07-22 10:52:07,231 - WARNING - 请求超时: https://github.com/trending/shell
+2025-07-22 10:52:07,232 - INFO - 等待 1.08 秒后重试
+2025-07-22 10:52:08,317 - INFO - 请求页面: https://github.com/trending/shell (尝试 2/10)
+2025-07-22 10:52:18,323 - WARNING - 请求超时: https://github.com/trending/shell
+2025-07-22 10:52:18,323 - INFO - 等待 2.42 秒后重试
+2025-07-22 10:52:20,746 - INFO - 请求页面: https://github.com/trending/shell (尝试 3/10)
+2025-07-22 10:52:36,369 - INFO - 开始解析 shell 的 Trending 页面
+2025-07-22 10:52:36,561 - INFO - 成功获取 14 个 Shell 的 Trending 仓库
+2025-07-22 10:52:36,572 - INFO - 成功保存 14 个 shell 的仓库
+2025-07-22 10:52:36,572 - INFO - 等待 5.22 秒后继续下一种语言
+2025-07-22 10:52:41,799 - INFO - 开始爬取 objective-cscala 的 Trending 仓库
+2025-07-22 10:52:41,799 - INFO - 请求页面: https://github.com/trending/objective-cscala (尝试 1/10)
+2025-07-22 10:52:43,148 - INFO - 开始解析 objective-cscala 的 Trending 页面
+2025-07-22 10:52:43,332 - INFO - 未找到 objective-cscala 的 Trending 仓库
+2025-07-22 10:52:43,332 - WARNING - 未找到 objective-cscala 的 Trending 仓库
+2025-07-22 10:52:43,332 - INFO - 等待 6.22 秒后继续下一种语言
+2025-07-22 10:52:49,560 - INFO - 开始爬取 groovy 的 Trending 仓库
+2025-07-22 10:52:49,560 - INFO - 请求页面: https://github.com/trending/groovy (尝试 1/10)
+2025-07-22 10:52:50,991 - INFO - 开始解析 groovy 的 Trending 页面
+2025-07-22 10:52:51,171 - INFO - 成功获取 4 个 Groovy 的 Trending 仓库
+2025-07-22 10:52:51,174 - INFO - 成功保存 4 个 groovy 的仓库
+2025-07-22 10:52:51,174 - INFO - 等待 6.94 秒后继续下一种语言
+2025-07-22 10:52:58,119 - INFO - 开始爬取 haskell 的 Trending 仓库
+2025-07-22 10:52:58,119 - INFO - 请求页面: https://github.com/trending/haskell (尝试 1/10)
+2025-07-22 10:52:59,699 - INFO - 开始解析 haskell 的 Trending 页面
+2025-07-22 10:52:59,936 - INFO - 成功获取 6 个 Haskell 的 Trending 仓库
+2025-07-22 10:52:59,940 - INFO - 成功保存 6 个 haskell 的仓库
+2025-07-22 10:52:59,940 - INFO - 等待 5.60 秒后继续下一种语言
+2025-07-22 10:53:05,541 - INFO - 开始爬取 perl 的 Trending 仓库
+2025-07-22 10:53:05,541 - INFO - 请求页面: https://github.com/trending/perl (尝试 1/10)
+2025-07-22 10:53:07,202 - INFO - 开始解析 perl 的 Trending 页面
+2025-07-22 10:53:07,394 - INFO - 成功获取 13 个 Perl 的 Trending 仓库
+2025-07-22 10:53:07,399 - INFO - 成功保存 13 个 perl 的仓库
+2025-07-22 10:53:07,400 - INFO - 等待 5.03 秒后继续下一种语言
+2025-07-22 10:53:12,430 - INFO - 总共成功保存 335 个仓库到数据库
+2025-07-22 10:53:12,431 - INFO - 已清除状态文件
+2025-07-22 10:53:12,431 - INFO - ===== GitHub Trending 爬虫执行完成 =====
