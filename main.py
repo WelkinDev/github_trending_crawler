@@ -46,7 +46,8 @@ def main():
             'scala',
             'groovy',
             'haskell',
-            'perl'
+            'perl',
+            'jupyter-notebook'
         ]
         
         all_repos = []
